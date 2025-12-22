@@ -22,6 +22,7 @@ async function getWord() {
   return data[0];
 }
 
+//starting the game
 async function startNewGame() {
   const word = await getWord();
   wordStore = word.split('')
@@ -30,13 +31,14 @@ async function startNewGame() {
   displayHangmanWord();
 }
 
+//the word that the user is guessing that we will display on the screen
 function mutatingWord(){
     for (let i = 0; i < wordStore.length; i++){
         wordMutate[i] = "_";
     }
 }
 
-//DISPLAYNG THE NEW WORD USING ___ ON THE UI
+//DISPLAYNG THE NEW WORD USING _ _ _ ON THE UI
 function displayHangmanWord(){
     wordDisplay.innerHTML = wordMutate.join(" ");
 }
