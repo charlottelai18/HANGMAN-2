@@ -1,0 +1,10 @@
+@use "./base/reset";
+@use "./base/variables";
+
+@use "./base/game";
+@use "./base/global.scss";
+
+@use "./components/word";
+@use "./components/letters";
+@use "./components/button";
+@use "./components/image";

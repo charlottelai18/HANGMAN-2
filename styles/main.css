@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  background: #e8dcec;
+  color: #282a62;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.game--letters--container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0.5rem;
+  margin: 2rem;
+  width: 100%;
+}
+
+.game--letter {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  background-color: navy;
+  color: white;
+  padding: 0.5rem 0rem 0.5rem 0rem;
+  border-radius: 0.5rem;
+  border: 2px solid rgb(15, 15, 14);
+}
+
+.game--letter:hover {
+  transform: translateY(-8px);
+  transition: ease-in-out 0.5s;
+}
+
+.game--img--status {
+  width: 12.5rem;
+  box-shadow: 2px 2px 2px 2px rgb(219, 216, 216);
+  margin: 3rem;
+}
+
+/*# sourceMappingURL=main.css.map */

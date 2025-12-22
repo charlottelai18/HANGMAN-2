@@ -66,7 +66,7 @@ function checkGuessedLetter(event) {
 
 function checkIfWon(){
     if (incorrectGuessCount === 10){
-        gameResults.innerHTML = "YOU LOST TRY AGAIN"
+        gameResults.innerHTML = `YOU LOST :(, the word was ${wordStore.join("")}` 
         incorrectGuessCount = 0;
         guessedBtns.forEach((btn) => {btn.disabled = true});
     }
