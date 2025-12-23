@@ -11,9 +11,18 @@ guessedBtns.forEach((btn) => {btn.addEventListener("click", checkGuessedLetter)}
 const hangmanImage = document.querySelector(".game--img--status");
 const gameResults = document.querySelector(".game--results")
 const newGameBtn = document.querySelector(".game--new--game");
+const guessCounter = document.querySelector(".game--guess--counter");
 newGameBtn.addEventListener("click", startNewGame);
 
 guessedBtns.forEach((btn) => {btn.disabled = true});
+
+//DISPLAY 0/10 WRONG GUESSES
+guessCounter.innerHTML = `Wrong guesses: ${incorrectGuessCount}/10`;
+
+//HELPER FUNCTION THAT RE-RENDERS WRONG GUESSES AFTER EVERY GUESS
+function updateWrongGuess(){
+    guessCounter.innerHTML = `Wrong guesses: ${incorrectGuessCount}/10`;
+}
 
 // RETRIEVING NEW WORD USING RANDOM WORD API
 async function getWord() {
@@ -64,10 +73,12 @@ function checkGuessedLetter(event) {
     incorrectGuessCount += 1;
     hangmanImage.src = `imgs/h-${incorrectGuessCount}.jpg`
     event.target.disabled = true;
+    updateWrongGuess();
   }
   checkIfWon();
 }
 
+//CHECK IF WON AFTER EVERY GUESS BY COUNTING NUMBER OF _ _ _ IN TRACKING ARRAY
 function checkIfWon(){
     if (incorrectGuessCount === 10){
         gameResults.innerHTML = `You lost :( the word was ${wordStore.join("")}` 
@@ -79,6 +90,7 @@ function checkIfWon(){
     }
 }
 
+//RESET ALL DATA AND TRACKING ALL WORDS
 function resetData(){
     guessedLetters = [];
     wordMutate = [];

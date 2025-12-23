@@ -67,7 +67,7 @@ body {
 }
 
 .game--word--display {
-  padding: 3rem;
+  padding: 3rem 3rem 0rem 3rem;
   font-size: 2rem;
 }
 
