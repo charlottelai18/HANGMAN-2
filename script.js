@@ -26,6 +26,7 @@ async function getWord() {
 async function startNewGame() {
   const word = await getWord();
   wordStore = word.split('')
+  console.log(word)
   resetData();
   mutatingWord();
   displayHangmanWord();
