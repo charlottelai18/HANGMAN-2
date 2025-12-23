@@ -13,6 +13,8 @@ const gameResults = document.querySelector(".game--results")
 const newGameBtn = document.querySelector(".game--new--game");
 newGameBtn.addEventListener("click", startNewGame);
 
+guessedBtns.forEach((btn) => {btn.disabled = true});
+
 // RETRIEVING NEW WORD USING RANDOM WORD API
 async function getWord() {
   const response = await fetch(
@@ -26,7 +28,7 @@ async function getWord() {
 async function startNewGame() {
   const word = await getWord();
   wordStore = word.split('')
-  console.log(word)
+  guessedBtns.forEach((btn) => {btn.disabled = false});
   resetData();
   mutatingWord();
   displayHangmanWord();
