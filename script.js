@@ -14,6 +14,9 @@ const newGameBtn = document.querySelector(".game--new--game");
 const guessCounter = document.querySelector(".game--guess--counter");
 newGameBtn.addEventListener("click", startNewGame);
 
+function disableButtons(){
+    guessedBtns.forEach((btn) => {btn.disabled = true});
+}
 guessedBtns.forEach((btn) => {btn.disabled = true});
 
 //DISPLAY 0/10 WRONG GUESSES
@@ -39,6 +42,7 @@ async function startNewGame() {
   wordStore = word.split('')
   guessedBtns.forEach((btn) => {btn.disabled = false});
   resetData();
+  updateWrongGuess();
   mutatingWord();
   displayHangmanWord();
 }
