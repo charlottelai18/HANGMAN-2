@@ -61,18 +61,19 @@ function checkGuessedLetter(event) {
   } else {
     incorrectGuessCount += 1;
     hangmanImage.src = `imgs/h-${incorrectGuessCount}.jpg`
+    event.target.disabled = true;
   }
   checkIfWon();
 }
 
 function checkIfWon(){
     if (incorrectGuessCount === 10){
-        gameResults.innerHTML = `YOU LOST :(, the word was ${wordStore.join("")}` 
+        gameResults.innerHTML = `You lost :( the word was ${wordStore.join("")}` 
         incorrectGuessCount = 0;
         guessedBtns.forEach((btn) => {btn.disabled = true});
     }
     else if (incorrectGuessCount < 10 && !wordMutate.includes("_")){
-        gameResults.innerHTML = "YAY U WON"
+        gameResults.innerHTML = "Congrats you won!"
     }
 }
 

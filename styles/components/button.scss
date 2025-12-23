@@ -2,24 +2,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .game--letters--container{
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 0.5rem;
-    margin: 2rem;
+    display: block;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+    margin: 2rem;
 }
 
 .game--letter{
     font-size: 1rem;
     font-family: "Montserrat", sans-serif;
-    background-color: navy;
-   color: white;
-    padding: 0.5rem 0rem 0.5rem 0rem;
-   border-radius: 0.5rem;
-   border: 2px solid rgb(15, 15, 14);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 2px 2px rgb(146, 145, 145);
+    border-style: none;
+    margin: 0.2rem;
+}
+
+.game--letter:disabled{
+    background-color: grey;
+    pointer-events: none;
+}
+
+.game--new--game{
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 2px 2px rgb(146, 145, 145);
+    border-style: none;
+    margin: 0.2rem;
 }
 
 .game--letter:hover{
-    transform: translateY(-8px);
-    transition: ease-in-out 0.5s;
+    transform: translateY(-4px);
+    transition: ease-in-out 0.2s;
+}
+
+.game--new--game:hover{
+    transform: translateY(-4px);
+    transition: ease-in-out 0.2s;
 }
