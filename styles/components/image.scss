@@ -5,3 +5,11 @@
     height: 400px;
     object-fit: contain;
 }
+
+@media (max-width: 480px) {
+  .game--img--status {
+    width: 180px;
+    height: 300px;
+    margin: 0.75rem auto;
+  }
+}
