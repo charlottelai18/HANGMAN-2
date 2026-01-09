@@ -27,14 +27,13 @@ function updateWrongGuess(){
     guessCounter.innerHTML = `Wrong guesses: ${incorrectGuessCount}/10`;
 }
 
-// RETRIEVING NEW WORD USING RANDOM WORD API
 async function getWord() {
-  const response = await fetch(
-    "https://random-word-api.herokuapp.com/word?number=1"
-  );
-  const data = await response.json();
+  const res = await fetch("https://random-word-api.vercel.app/api?words=1");
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const data = await res.json(); // e.g. ["banana"]
   return data[0];
 }
+
 
 //starting the game
 async function startNewGame() {
